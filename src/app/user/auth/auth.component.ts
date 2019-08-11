@@ -15,6 +15,8 @@ export class AuthComponent implements OnInit {
   isLoginMode = true;
   isLoading = false;
   uiError: string = null;
+  email: string;
+  password: string;
 
   constructor(
     private authService: AuthService,

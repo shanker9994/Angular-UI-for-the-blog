@@ -23,22 +23,22 @@ import { map, take, delay } from 'rxjs/operators';
 export class PostdetailComponent implements OnInit, OnDestroy {
 
 
-  private postDetails: PostDetailResponse;
-  private uiComments: CommentResponse[] = [];
+  postDetails: PostDetailResponse;
+  uiComments: CommentResponse[] = [];
 
-  private postLoading = false;
-  private postLoadingError = null;
-  private signUpError = null;
-  private commentPostError = null;
-  private userLogInFlag = null;
+  postLoading = false;
+  postLoadingError = null;
+  signUpError = null;
+  commentPostError = null;
+  userLogInFlag = null;
 
 
   /*For comment :start*/
-  private user: UserRequest = new UserRequest('', '', '');
-  private comment: CommentRequest = new CommentRequest('', '', true, new Date(), null, null);
-  private userResponse: UserDetailResponse;
-  private inValidEmail: string = null;
-  private userFlag: boolean = false;
+  user: UserRequest = new UserRequest('', '', '');
+  comment: CommentRequest = new CommentRequest('', '', true, new Date(), null, null);
+  userResponse: UserDetailResponse;
+  inValidEmail: string = null;
+  userFlag: boolean = false;
 
   SignedUserObserable = new Observable();
   userSubscription: Subscription;

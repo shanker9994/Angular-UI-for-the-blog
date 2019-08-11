@@ -7,7 +7,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppComponent } from './app.component';
 import { SignupComponent } from './user/signup/signup.component';
-import { LoginComponent } from './user/login/login.component';
 import { LogoutComponent } from './user/logout/logout.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './blog/home/home.component';
@@ -28,7 +27,6 @@ import { LoadingSpinnerComponent } from './utils/loading-spinner/loading-spinner
   declarations: [
     AppComponent,
     SignupComponent,
-    LoginComponent,
     LogoutComponent,
     HeaderComponent,
     HomeComponent,

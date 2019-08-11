@@ -1,7 +1,6 @@
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './blog/home/home.component';
-import { LoginComponent } from './user/login/login.component';
 import { LogoutComponent } from './user/logout/logout.component';
 import { SearchComponent } from './blog/search/search.component';
 import { CreatepostComponent } from './blog/createpost/createpost.component';
@@ -17,7 +16,6 @@ const routes: Routes = [
   { path: 'blogs', component: HomeComponent },
   { path: 'blogs/:postId', component: PostdetailComponent },
   { path: 'blogs/posts/tags/:tagName', component: TagsComponent },
-  { path: 'login', component: LoginComponent },
   { path: 'blogs/users/login', component: AuthComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'search', component: SearchComponent },

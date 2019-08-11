@@ -10,6 +10,7 @@ import { PostDetailResponse } from 'src/app/model/response/post-detail-response'
 export class HomeComponent implements OnInit {
   uiPosts: PostDetailResponse[] = [];
   p: number = 1;
+  filter: string;
 
 
   constructor(private postService: PostService) { }

@@ -11,10 +11,10 @@ import { PostService } from 'src/app/services/post.service';
 })
 export class CreatepostComponent implements OnInit {
 
-  private tags = ['Java', 'Spring Boot',
+  tags = ['Java', 'Spring Boot',
     'Database', 'Linux', 'Misc'];
 
-  private postCreationError;
+  postCreationError;
 
   // create object of Post clss to hold the data.
   user: UserRequest = new UserRequest('Shankar', 'shankar@gmail.com');

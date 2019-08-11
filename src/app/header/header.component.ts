@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   isNavbarCollapsed = true;
   isUserLoggedIn = false;
   userName: string;
-  private authUser = false;
+  authUser = false;
 
   private userSub: Subscription;
 
