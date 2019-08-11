@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8" style="margin-top: 10%" *ngIf="uiPosts">
+      <div class="card mb-5" *ngFor="let post of uiPosts|paginate: { itemsPerPage: 15, currentPage: p }">
+        <div class="card-body">
+          <h4 class="card-title text-capitalize">
+            <a class="text-dark" routerLink="/blogs/{{post.postId}}">{{post.title}}</a>
+            <br />
+            <small>{{post.creationDate |date}} | By {{post.user.userName}}</small>
+          </h4>
+          <span class="card-text" [innerHtml]="post.description">Post Content</span>
+          <h5><a routerLink="/blogs/{{post.postId}}">Read More...</a></h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 d-sm-none d-md-block" style="margin-top: 10%">
+      <form class="form-inline mb-5">
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="search"
+          [(ngModel)]="filter">
+        <button class="btn btn-outline-success ml-3 mt-sm-2-1" type="submit">Search</button>
+      </form>
+      <h4 class="text-muted">Latest Articles</h4>
+      <div class="list-group mt-0">
+        <div *ngFor="let post of uiPosts | slice:0:5">
+          <a routerLink="/blogs/{{post.postId}}" class="list-group-item list-group-item-action text-capitalize">
+            <small>{{post.creationDate |date}}</small>
+            <br />
+            {{post.title}}
+          </a>
+        </div>
+      </div>
+    </div>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="container">
+
+  <!-- <h1>Hero Form</h1> -->
+  <div class=row style="margin-top: 10%">
+    <div class="col-md-12">
+      <div class="alert-danger" *ngIf="postCreationError">{{postCreationError}}</div>
+      <form (ngSubmit)="onSubmit(formData)" #formData="ngForm">
+        <div class="form-group">
+          <input type="text" class="form-control" id="title" name="title" [(ngModel)]="postRequest.title" required
+            placeholder="Write the heading">
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" id="description" name="title" [(ngModel)]="postRequest.description" required
+            placeholder="Write the short description"></textarea>
+        </div>
+
+        <div class="form-group">
+          <editor apiKey="d0b7up14gv7e6gyjdj3ozc6rge44mhjnym83eniqr1ttern1" [init]="{height : 300}"
+            [(ngModel)]=" postRequest.content" name="content" required>
+          </editor>
+        </div>
+        <div class="form-group col-md-2">
+          <label for="tags">Tag</label>
+          <select class="form-control" id="tag" name="tag" [(ngModel)]="postRequest.tag" required>
+            <option *ngFor="let tag of tags" [value]="tag">{{tag}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="text" hidden name="postId" [(ngModel)]="postRequest.postId">
+        </div>
+        <button type="submit" class="btn btn-success btn-primary" [disabled]="!formData.form.valid">Submit</button>
+
+      </form>
+    </div>
+  </div>
+</div>
