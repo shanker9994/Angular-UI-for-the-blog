@@ -14,7 +14,7 @@ export class TagsServiceService {
 
   getAllPostByTagName(tagName: string): Observable<PostDetailResponse[]> {
     return this.http.get<PostDetailResponse[]>
-      (`http://ec2-13-232-6-4.ap-south-1.compute.amazonaws.com:8080/blogs/posts/tags/${tagName}`);
+      (`https://springbootjavaapi.ml/blogs/posts/tags/${tagName}`);
 
   }
 }

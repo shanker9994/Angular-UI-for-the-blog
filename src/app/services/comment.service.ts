@@ -13,7 +13,7 @@ export class CommentService {
 
   public postComment(comment: CommentRequest, postId: string): Observable<CommentResponse> {
     return this.http.post<CommentResponse>
-      (`http://ec2-13-232-6-4.ap-south-1.compute.amazonaws.com:8080/blogs/posts/${postId}/comments`,
+      (`https://springbootjavaapi.ml/blogs/posts/${postId}/comments`,
         comment);
   }
 
@@ -21,6 +21,6 @@ export class CommentService {
 
   public getAllCommentsByPostId(postId: string): Observable<CommentResponse[]> {
     return this.http.get<CommentResponse[]>
-      (`http://ec2-13-232-6-4.ap-south-1.compute.amazonaws.com:8080/blogs/posts/${postId}/comments`);
+      (`https://springbootjavaapi.ml/blogs/posts/${postId}/comments`);
   }
 }
