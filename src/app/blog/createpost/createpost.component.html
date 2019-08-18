@@ -1,7 +1,8 @@
-<div class="container">
+<header></header>
 
+<div class="container">
   <!-- <h1>Hero Form</h1> -->
-  <div class=row style="margin-top: 10%">
+  <div class=row>
     <div class="col-md-12">
       <div class="alert-danger" *ngIf="postCreationError">{{postCreationError}}</div>
       <form (ngSubmit)="onSubmit(formData)" #formData="ngForm">
@@ -15,8 +16,26 @@
         </div>
 
         <div class="form-group">
-          <editor apiKey="d0b7up14gv7e6gyjdj3ozc6rge44mhjnym83eniqr1ttern1" [init]="{height : 300}"
-            [(ngModel)]=" postRequest.content" name="content" required>
+          <editor apiKey="d0b7up14gv7e6gyjdj3ozc6rge44mhjnym83eniqr1ttern1" [init]="{height : 300,
+            plugins: 'image imagetools lists advlist anchor anchor code 
+                    codesample table quickbars fullscreen' ,
+
+          menubar: 'insert imagetools tools table view',
+
+          toolbar: 'image undo redo| fullscreen | code codesample| bold italic |
+          bullist numlist table|outdent indent| formatselect fontselect fontsizeselect',
+
+          block_formats:'Paragraph=p; Heading 1=h1; Heading 2=h2; Heading 3=h3; Heading 4=h4; Heading 5=h5; Heading
+          6=h6; Preformatted=pre',
+          quickbars_insert_toolbar: 'quickimage',
+          font_formats:'Andale Mono=andale mono,times; Arial=arial,helvetica,sans-serif; Arial Black=arial black,avant
+          garde; Book Antiqua=book antiqua,palatino; Comic Sans MS=comic sans ms,sans-serif; Courier New=courier
+          new,courier; Georgia=georgia,palatino; Helvetica=helvetica; Impact=impact,chicago; Symbol=symbol;
+          Tahoma=tahoma,arial,helvetica,sans-serif; Terminal=terminal,monaco; Times New Roman=times new roman,times;
+          Trebuchet MS=trebuchet ms,geneva; Verdana=verdana,geneva; Webdings=webdings; Wingdings=wingdings,zapf
+          dingbats',
+          fontsize_formats: '10px 12px 14px 16px 18px 24px 36px 48px'
+         }" [(ngModel)]=" postRequest.content" name="content" required>
           </editor>
         </div>
         <div class="form-group col-md-2">

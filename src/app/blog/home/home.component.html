@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <div class="container">
   <div class="row">
-    <div class="col-md-8" style="margin-top: 10%" *ngIf="uiPosts">
+    <div class="col-md-8" *ngIf="uiPosts">
       <div class="card mb-5" *ngFor="let post of uiPosts|paginate: { itemsPerPage: 15, currentPage: p }">
         <div class="card-body">
           <h4 class="card-title text-capitalize">
@@ -14,12 +14,12 @@
         </div>
       </div>
     </div>
-    <div class="col-md-4 d-sm-none d-md-block" style="margin-top: 10%">
-      <form class="form-inline mb-5">
+    <div class="col-md-4 d-sm-none d-md-block">
+      <!-- <form class="form-inline mb-5">
         <input class="form-control" type="search" name="filter" placeholder="Search" aria-label="Search" name="search"
           [(ngModel)]="filter">
         <button class="btn btn-outline-success ml-3 mt-sm-2-1" type="submit">Search</button>
-      </form>
+      </form> -->
       <h4 class="text-muted">Latest Articles</h4>
       <div class="list-group mt-0">
         <div *ngFor="let post of uiPosts | slice:0:5">

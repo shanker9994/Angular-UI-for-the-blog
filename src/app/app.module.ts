@@ -21,6 +21,8 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { FooterComponent } from './footer/footer.component';
 import { AuthComponent } from './user/auth/auth.component';
 import { LoadingSpinnerComponent } from './utils/loading-spinner/loading-spinner.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
@@ -46,7 +48,8 @@ import { LoadingSpinnerComponent } from './utils/loading-spinner/loading-spinner
     FormsModule,
     EditorModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    BrowserAnimationsModule
 
   ],
   providers: [
