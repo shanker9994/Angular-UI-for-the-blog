@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ɵConsole } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewChecked, ɵConsole } from '@angular/core';
 import { PostService } from 'src/app/services/post.service';
 import { ActivatedRoute } from '@angular/router';
 import { PostDetailResponse } from 'src/app/model/response/post-detail-response';
@@ -14,16 +14,19 @@ import { AuthService } from 'src/app/services/auth.service';
 import { UserLoginRequestModel } from 'src/app/user/user-login-request-model';
 import { Observable, Subscription } from 'rxjs';
 import { map, take, delay } from 'rxjs/operators';
+import { HighlightService } from 'src/app/services/highlight.service';
+
 
 @Component({
   selector: 'app-postdetail',
   templateUrl: './postdetail.component.html',
   styleUrls: ['./postdetail.component.css']
 })
-export class PostdetailComponent implements OnInit, OnDestroy {
+export class PostdetailComponent implements OnInit, OnDestroy, AfterViewChecked {
 
 
   postDetails: PostDetailResponse;
+  highlighted: boolean = false;
   uiComments: CommentResponse[] = [];
 
   postLoading = false;
@@ -50,7 +53,15 @@ export class PostdetailComponent implements OnInit, OnDestroy {
     private userService: UserService,
     private commentservice: CommentService,
     private globalApp: GlobalAppService,
-    private authService: AuthService) { }
+    private authService: AuthService,
+    private highlightService: HighlightService) { }
+
+  ngAfterViewChecked() {
+    if (this.postDetails && !this.highlighted) {
+      this.highlightService.highlightAll();
+      this.highlighted = true;
+    }
+  }
 
   ngOnInit() {
     // Get post details

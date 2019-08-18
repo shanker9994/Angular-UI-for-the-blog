@@ -9,7 +9,7 @@ import { UserRequest } from '../model/request/user-request';
 })
 export class UserService {
 
-  url = 'http://localhost:8080/blogs/users';
+  url = 'https://springbootjavaapi.ml/blogs/users';
 
   constructor(public http: HttpClient) { }
 
@@ -24,6 +24,6 @@ export class UserService {
 
   // get user
   public getUser(userEmail: string): Observable<UserDetailResponse> {
-    return this.http.get<UserDetailResponse>(`http://localhost:8080/blogs/users/${userEmail}`);
+    return this.http.get<UserDetailResponse>(`https://springbootjavaapi.ml/blogs/users/${userEmail}`);
   }
 }

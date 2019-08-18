@@ -23,7 +23,7 @@ export class AuthService {
 
   // signup method
   signUp(user: UserRequest) {
-    const url = 'http://localhost:8080/blogs/users';
+    const url = 'https://springbootjavaapi.ml/blogs/users';
     return this.http.post<UserDetailResponse>(url, user)
       .pipe(
         catchError(backedError => {
@@ -37,7 +37,7 @@ export class AuthService {
   signIn(user: UserLoginRequestModel) {
     console.log('Login details are' + user.email);
     // console.log('Login details are' + user.password);
-    const url = 'http://localhost:8080/blogs/users/login';
+    const url = 'https://springbootjavaapi.ml/blogs/users/login';
     return this.http.post<any>(url, user, { observe: 'response' }).pipe(
       catchError(backendLoginError => {
         const uiLoginError = 'Wrong Username or Password';
@@ -118,7 +118,7 @@ export class AuthService {
 
   }
   public getUser(userEmail: string): Observable<boolean> {
-    return this.http.get<boolean>(`http://localhost:8080/blogs/users/${userEmail}`).pipe(
+    return this.http.get<boolean>(`https://springbootjavaapi.ml/blogs/users/${userEmail}`).pipe(
       map(userData => {
         if (userData) {
           return true;

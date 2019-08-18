@@ -1,11 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~prismjs/plugins/toolbar/prism-toolbar.css";
+@import "~prismjs/themes/prism-okaidia";
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  -ms-overflow-style: scrollbar;
   -webkit-tap-highlight-color: transparent;
+}
+
+@media(max-width:480px) {
+  .card {
+    margin-top: 10%;
+  }
 }
 
 body {
@@ -34,13 +42,6 @@ a {
 a:hover {
   color: #0056b3;
   text-decoration: underline;
-}
-
-pre {
-  font-size: 18px;
-  line-height: 20px;
-  background-color: black;
-  color: whitesmoke;
 }
 
 table {

@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class PostService {
 
-  url = 'http://localhost:8080/blogs/posts';
+  url = 'https://springbootjavaapi.ml/blogs/posts';
 
   uiPosts: PostDetailResponse[] = [];
 
@@ -30,6 +30,6 @@ export class PostService {
 
   // get post by PostId
   public getPostByPostId(postId: string): Observable<PostDetailResponse> {
-    return this.http.get<PostDetailResponse>(`http://localhost:8080/blogs/posts/${postId}`);
+    return this.http.get<PostDetailResponse>(`https://springbootjavaapi.ml/blogs/posts/${postId}`);
   }
 }
