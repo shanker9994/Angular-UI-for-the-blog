@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <div class="container">
   <div class="row">
+    <div *ngIf="postLoading">
+      <app-loading-spinner></app-loading-spinner>
+    </div>
     <div class="col-md-8" *ngIf="uiPosts">
       <div class="card mb-5" *ngFor="let post of uiPosts|paginate: { itemsPerPage: 15, currentPage: p }">
         <div class="card-body">

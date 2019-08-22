@@ -89,7 +89,7 @@ export class PostdetailComponent implements OnInit, OnDestroy, AfterViewChecked 
         error => {
           console.log('Errors retriving post details');
           this.postLoadingError = error.error.message;
-          this.postLoading = true;
+          this.postLoading = false;
 
         }
       );
